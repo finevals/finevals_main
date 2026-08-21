@@ -16,6 +16,20 @@
   margin-top: 25px;
 }
 
+/*===== SOLUTION CARDS =====*/
+/* Keep the four cards the same height whatever the copy length, so the
+   row stays even when text is edited. Scoped to #features so it does not
+   touch the blog listing, which reuses .services-area. */
+#features .row > [class*="col-lg-3"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#features .single-services {
+  width: 100%;
+}
+
 /*===== FOOTER CONTACT =====*/
 .footer-mail {
   display: inline-block;
