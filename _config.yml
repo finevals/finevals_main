@@ -1,0 +1,37 @@
+# ---------------------------------------------------------------
+# FinEvals.ai — GitHub Pages / Jekyll configuration
+#
+# GitHub Pages already builds this repo with Jekyll (Pages build
+# type is "legacy"), so no CI workflow and no build step is needed.
+# index.html has no front matter, which means Jekyll copies it
+# through verbatim — the marketing page is untouched by the blog.
+# ---------------------------------------------------------------
+
+title: FinEvals.ai
+email: hello@finevals.ai
+description: >-
+  Regulatory-grade AI evaluations for financial services companies.
+url: "https://finevals.ai"
+baseurl: ""
+
+# Posts are published at /blog/<slug>/
+permalink: /blog/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# Every file in _posts/ gets the post layout automatically.
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .claude

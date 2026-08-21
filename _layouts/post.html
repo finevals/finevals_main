@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<article class="pt-50">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="post-header text-center pb-40">
+          <h1 class="post-title">{{ page.title }}</h1>
+          <span class="post-meta">
+            {{ page.date | date: "%-d %B %Y" }}{% if page.author %} · {{ page.author }}{% endif %}
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- row -->
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="post-content">
+          {{ content }}
+        </div>
+        <div class="post-content pt-30">
+          <a class="post-link" href="{{ '/blog/' | relative_url }}">&larr; All posts</a>
+        </div>
+      </div>
+    </div>
+    <!-- row -->
+  </div>
+  <!-- container -->
+</article>

@@ -1,0 +1,50 @@
+---
+layout: default
+title: Blog
+description: Notes on evaluating AI systems to a standard that survives audit.
+---
+
+<section class="services-area">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="section-title text-center pb-40">
+          <div class="line m-auto"></div>
+          <h3 class="title">Blog</h3>
+          <p class="text blog-intro">
+            Notes on evaluating AI systems to a standard that survives second-line
+            validation, internal audit and a regulator.
+          </p>
+        </div>
+        <!-- section title -->
+      </div>
+    </div>
+    <!-- row -->
+
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        {% for post in site.posts %}
+        <div class="single-post mt-30">
+          <h2 class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h2>
+          <span class="post-meta">
+            {{ post.date | date: "%-d %B %Y" }}{% if post.author %} · {{ post.author }}{% endif %}
+          </span>
+          <p class="text">
+            {% if post.description %}{{ post.description }}{% else %}{{ post.excerpt | strip_html | truncate: 200 }}{% endif %}
+          </p>
+          <a class="post-link" href="{{ post.url | relative_url }}">Read more &rarr;</a>
+        </div>
+        <!-- single post -->
+        {% else %}
+        <div class="single-post mt-30 text-center">
+          <p class="text">No posts yet — the first one is on its way.</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <!-- row -->
+  </div>
+  <!-- container -->
+</section>

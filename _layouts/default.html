@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="{{ '/assets/favicon.png' | relative_url }}" type="image/png" />
+
+    <!--====== CSS Files LinkUp ======-->
+    <link rel="stylesheet" href="{{ '/assets/css/lineIcons.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/assets/css/finevals.css' | relative_url }}" />
+  </head>
+
+  <body class="blog-page">
+    <!--====== HEADER PART START ======-->
+    <header class="header-area">
+      <!-- No hero on blog pages, so the navbar keeps its solid state. -->
+      <div class="navbar-area sticky">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="{{ '/' | relative_url }}">
+                  <img src="{{ '/assets/images/logo/logo-2.svg' | relative_url }}" alt="FinEvals.ai" />
+                </a>
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="toggler-icon"> </span>
+                  <span class="toggler-icon"> </span>
+                  <span class="toggler-icon"> </span>
+                </button>
+
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                  <ul id="nav" class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a href="{{ '/' | relative_url }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{ '/#features' | relative_url }}">Solution</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{ '/#about' | relative_url }}">How it Works</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="active" href="{{ '/blog/' | relative_url }}">Blog</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- navbar collapse -->
+              </nav>
+              <!-- navbar -->
+            </div>
+          </div>
+          <!-- row -->
+        </div>
+        <!-- container -->
+      </div>
+      <!-- navbar area -->
+    </header>
+    <!--====== HEADER PART ENDS ======-->
+
+    <main class="page-body">
+      {{ content }}
+    </main>
+
+    <!--====== FOOTER PART START ======-->
+    <footer id="footer" class="footer-area pt-120">
+      <div class="container">
+        <div class="footer-widget pb-100">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-8">
+              <div class="footer-about mt-50">
+                <div class="footer-title">
+                  <h2 class="title">CONTACT US</h2>
+                  <a class="footer-mail" href="mailto:{{ site.email }}">{{ site.email }}</a>
+                </div>
+              </div>
+              <!-- footer about -->
+            </div>
+          </div>
+          <!-- row -->
+        </div>
+        <!-- footer widget -->
+      </div>
+      <!-- container -->
+    </footer>
+    <!--====== FOOTER PART ENDS ======-->
+
+    <!--====== Javascript Files ======-->
+    <script src="{{ '/assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
+    <script>
+      // Blog pages deliberately skip main.js (it is written for the
+      // one-page scroll behaviour of the landing page). All that is
+      // needed here is the hamburger's open/closed state.
+      (function () {
+        var toggler = document.querySelector(".navbar-toggler");
+        if (toggler) {
+          toggler.addEventListener("click", function () {
+            toggler.classList.toggle("active");
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
